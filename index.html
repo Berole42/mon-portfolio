@@ -4,553 +4,334 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Berole : informatique, cybersécurité, réseaux et créations graphiques.">
-  <title>Berole — Portfolio créatif</title>
+  <meta name="description" content="Portfolio de Berole, étudiante en informatique, réseaux et cybersécurité.">
+  <title>Berole | Portfolio</title>
 
   <style>
     :root {
-      --bg: #09070d;
-      --panel: #14101c;
-      --panel-light: #1c1528;
-      --purple: #a855f7;
-      --purple-light: #d8b4fe;
-      --white: #f8f5fc;
-      --muted: #b0a5bd;
-      --border: rgba(190, 130, 255, 0.2);
+      --background: #07111f;
+      --surface: #0d1b2e;
+      --blue: #168cff;
+      --light-blue: #64bdff;
+      --white: #f4f8ff;
+      --muted: #a9b9ce;
+      --border: rgba(100, 189, 255, 0.2);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
     }
 
     body {
-      background: var(--bg);
-      color: var(--white);
       font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--white);
       line-height: 1.7;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
-    }
-
-    img {
-      max-width: 100%;
+      text-decoration: none;
     }
 
     .container {
-      width: min(1120px, 90%);
-      margin: 0 auto;
+      width: min(1100px, 90%);
+      margin: auto;
     }
-
-    /* NAVIGATION */
 
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(9, 7, 13, 0.92);
-      backdrop-filter: blur(16px);
+      z-index: 10;
+      background: rgba(7, 17, 31, 0.95);
       border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     nav {
-      min-height: 76px;
+      min-height: 75px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
 
     .logo {
-      font-size: 1.45rem;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .logo span {
-      color: var(--purple);
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--light-blue);
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
       gap: 22px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
-      font-size: 0.88rem;
       color: var(--muted);
-      transition: color 0.2s;
+      font-size: 0.94rem;
+      transition: color 0.3s;
     }
 
     .nav-links a:hover {
-      color: var(--purple-light);
+      color: var(--light-blue);
     }
-
-    /* ACCUEIL */
 
     .hero {
-      min-height: 650px;
+      min-height: 82vh;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.3fr 0.7fr;
       align-items: center;
-      gap: 55px;
+      gap: 45px;
       padding-top: 65px;
-      padding-bottom: 75px;
+      padding-bottom: 65px;
     }
 
-    .small-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--purple-light);
+    .eyebrow {
+      color: var(--light-blue);
+      font-weight: bold;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 0.76rem;
-      font-weight: 700;
-    }
-
-    .small-label::before {
-      content: "";
-      width: 28px;
-      height: 2px;
-      background: var(--purple);
+      font-size: 0.82rem;
     }
 
     h1 {
-      margin: 22px 0;
-      font-size: clamp(3.2rem, 7vw, 6.1rem);
-      line-height: 0.99;
-      letter-spacing: -5px;
+      font-size: clamp(2.5rem, 6vw, 4.6rem);
+      line-height: 1.12;
+      margin: 18px 0;
     }
 
     h1 span {
-      display: block;
-      color: var(--purple);
+      color: var(--blue);
     }
 
-    .hero-description {
+    .hero p,
+    .section-description {
       color: var(--muted);
-      max-width: 510px;
-      margin-bottom: 28px;
-      font-size: 1.03rem;
+      max-width: 650px;
     }
 
     .hero-buttons {
       display: flex;
+      gap: 14px;
       flex-wrap: wrap;
-      gap: 13px;
+      margin-top: 28px;
     }
 
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 19px;
-      border: 1px solid var(--purple);
+      display: inline-block;
+      padding: 12px 20px;
       border-radius: 8px;
-      font-size: 0.92rem;
-      font-weight: 700;
-      transition: 0.25s;
-    }
-
-    .button-primary {
-      color: #fff;
-      background: var(--purple);
-    }
-
-    .button-secondary {
-      color: var(--purple-light);
-      background: transparent;
+      border: 1px solid var(--blue);
+      background: var(--blue);
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     .button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(168, 85, 247, 0.2);
+      box-shadow: 0 8px 25px rgba(22, 140, 255, 0.2);
     }
 
-    .portrait-area {
-      position: relative;
-      max-width: 440px;
-      width: 100%;
-      justify-self: end;
+    .button-outline {
+      background: transparent;
+      color: var(--light-blue);
     }
 
-    .portrait-frame {
-      position: relative;
-      padding: 12px;
-      border: 1px solid rgba(216, 180, 254, 0.45);
-      border-radius: 48% 48% 15px 15px;
-      background: linear-gradient(145deg, #32194d, #100b17 65%);
-      transform: rotate(2deg);
-    }
-
-    .portrait-frame img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border-radius: 48% 48% 9px 9px;
-      background: #21162d;
-    }
-
-    .portrait-placeholder {
-      aspect-ratio: 4 / 5;
-      border-radius: 48% 48% 9px 9px;
-      background:
-        radial-gradient(circle at 70% 20%, rgba(168, 85, 247, 0.45), transparent 35%),
-        linear-gradient(145deg, #241431, #0c0911);
+    .shield-area {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 25px;
     }
 
-    .portrait-placeholder .initial {
-      font-size: 7rem;
-      font-weight: 900;
-      line-height: 1;
-      color: var(--purple-light);
+    .shield {
+      width: min(290px, 75vw);
+      aspect-ratio: 1;
+      border: 2px solid var(--blue);
+      border-radius: 48% 48% 45% 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, #123b65, #0a1930 70%);
+      box-shadow: 0 0 55px rgba(22, 140, 255, 0.2);
+      font-size: 6rem;
+      color: var(--light-blue);
     }
-
-    .portrait-placeholder p {
-      color: var(--muted);
-      margin-top: 15px;
-      font-size: 0.9rem;
-    }
-
-    .floating-label {
-      position: absolute;
-      right: -18px;
-      bottom: 35px;
-      padding: 13px 17px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #171020;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-      transform: rotate(-3deg);
-    }
-
-    .floating-label strong {
-      display: block;
-      color: var(--purple-light);
-      font-size: 0.95rem;
-    }
-
-    .floating-label span {
-      color: var(--muted);
-      font-size: 0.75rem;
-    }
-
-    /* SECTIONS */
 
     section {
       padding: 85px 0;
+      border-top: 1px solid rgba(100, 189, 255, 0.08);
     }
 
-    .section-header {
-      max-width: 680px;
+    .section-heading {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 12px;
+    }
+
+    .section-heading span {
+      color: var(--blue);
+    }
+
+    .section-description {
       margin-bottom: 35px;
     }
 
-    .section-header h2 {
-      margin-top: 12px;
-      font-size: clamp(2rem, 5vw, 3.3rem);
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-    }
-
-    .section-header p {
-      color: var(--muted);
-      margin-top: 15px;
-    }
-
-    .accent {
-      color: var(--purple-light);
-    }
-
-    .about-section {
-      background: #100c16;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 45px;
-      align-items: start;
-    }
-
-    .about-title {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 1.1;
-      letter-spacing: -2px;
-    }
-
-    .about-text {
-      color: var(--muted);
-    }
-
-    .about-text p + p {
-      margin-top: 16px;
-    }
-
-    .interest-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 23px;
-    }
-
-    .interest-tags span {
-      padding: 7px 12px;
+    .about-box,
+    .card,
+    .contact-box {
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 30px;
-      color: var(--purple-light);
-      font-size: 0.83rem;
+      border-radius: 14px;
+      padding: 25px;
     }
 
-    /* COMPÉTENCES */
+    .about-box p {
+      color: var(--muted);
+    }
 
-    .skills-grid {
+    .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
-    .skill-card {
-      padding: 25px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--panel);
-      transition: 0.25s;
+    .card {
+      transition: transform 0.3s, border-color 0.3s;
     }
 
-    .skill-card:hover {
+    .card:hover {
       transform: translateY(-5px);
-      border-color: var(--purple);
-      background: var(--panel-light);
+      border-color: var(--blue);
     }
 
-    .skill-number {
-      color: var(--purple);
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 2px;
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
     }
 
-    .skill-card h3 {
-      margin: 15px 0 9px;
-      font-size: 1.15rem;
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--light-blue);
     }
 
-    .skill-card p {
+    .card p {
       color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    /* PROJETS */
-
-    .projects-section {
-      background: #100c16;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .project-card {
-      padding: 27px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .project-card:hover {
-      border-color: var(--purple);
-      transform: translateY(-4px);
-    }
-
-    .project-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .project-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: rgba(168, 85, 247, 0.13);
-      color: var(--purple-light);
-      font-size: 1.5rem;
-    }
-
-    .project-index {
-      color: #776784;
-      font-size: 0.8rem;
-    }
-
-    .project-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 9px;
-    }
-
-    .project-card p {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .project-type {
-      display: inline-block;
-      margin-top: 17px;
-      color: var(--purple-light);
-      font-size: 0.8rem;
-    }
-
-    /* CRÉATIONS GRAPHIQUES */
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .gallery-card {
-      overflow: hidden;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      cursor: pointer;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .gallery-card:hover {
-      border-color: var(--purple);
-      transform: translateY(-4px);
-    }
-
-    .gallery-card img {
-      width: 100%;
-      height: 320px;
-      display: block;
-      object-fit: contain;
-      background: #f6f3f8;
-    }
-
-    .gallery-info {
-      padding: 17px 19px;
-    }
-
-    .gallery-info h3 {
-      font-size: 1rem;
-    }
-
-    .gallery-info p {
-      color: var(--muted);
-      font-size: 0.86rem;
-      margin-top: 4px;
-    }
-
-    /* CONTACT */
-
-    .contact-section {
-      background:
-        radial-gradient(ellipse at 90% 20%, rgba(168, 85, 247, 0.13), transparent 38%),
-        #100c16;
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: start;
-    }
-
-    .contact-intro {
-      color: var(--muted);
-      max-width: 450px;
-      margin-top: 16px;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 13px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 11px;
-      background: rgba(20, 16, 28, 0.85);
-      overflow-wrap: anywhere;
-      transition: border-color 0.2s;
-    }
-
-    .contact-item:hover {
-      border-color: var(--purple);
-    }
-
-    .contact-icon {
-      min-width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      background: rgba(168, 85, 247, 0.13);
-      border-radius: 10px;
-      color: var(--purple-light);
-      font-size: 1.1rem;
-      font-weight: 800;
-    }
-
-    .contact-item strong {
-      display: block;
       font-size: 0.95rem;
     }
 
-    .contact-item small {
-      color: var(--muted);
-      font-size: 0.84rem;
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
     }
 
-    /* AGRANDISSEMENT DES FLYERS */
+    .tag {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      background: rgba(22, 140, 255, 0.08);
+      color: var(--light-blue);
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 330px;
+      object-fit: contain;
+      background: #101b2a;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.025);
+    }
+
+    .gallery-caption {
+      padding: 13px 16px;
+      color: var(--light-blue);
+    }
+
+    .contact-box {
+      max-width: 750px;
+    }
+
+    .contact-box > p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      overflow-wrap: anywhere;
+      transition: 0.3s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--blue);
+      background: rgba(22, 140, 255, 0.08);
+    }
+
+    .contact-symbol {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(22, 140, 255, 0.15);
+      color: var(--light-blue);
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
 
     .lightbox {
-      display: none;
       position: fixed;
       inset: 0;
       z-index: 100;
+      display: none;
       align-items: center;
       justify-content: center;
       padding: 25px;
-      background: rgba(0, 0, 0, 0.94);
+      background: rgba(0, 0, 0, 0.92);
     }
 
     .lightbox.open {
@@ -567,101 +348,77 @@
       position: absolute;
       top: 15px;
       right: 25px;
+      border: 0;
       background: transparent;
-      border: none;
       color: white;
-      font-size: 2.6rem;
+      font-size: 2.5rem;
       cursor: pointer;
     }
 
-    /* PIED DE PAGE */
-
-    footer {
-      padding: 25px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    footer span {
-      color: var(--purple-light);
-    }
-
-    /* RESPONSIVE : TÉLÉPHONE ET TABLETTE */
-
     @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero p {
+        margin: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .shield-area {
+        grid-row: 1;
+      }
+
+      .shield {
+        width: 180px;
+        font-size: 4rem;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       nav {
         padding: 15px 0;
-        align-items: flex-start;
         flex-direction: column;
       }
 
       .nav-links {
-        gap: 12px 17px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding-top: 55px;
-      }
-
-      .hero-copy {
-        order: 1;
-      }
-
-      .portrait-area {
-        order: 0;
-        justify-self: center;
-        max-width: 330px;
-      }
-
-      h1 {
-        letter-spacing: -2px;
-      }
-
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        gap: 12px;
       }
     }
 
     @media (max-width: 520px) {
-      .skills-grid,
-      .project-grid,
-      .gallery-grid {
+      .grid,
+      .gallery {
         grid-template-columns: 1fr;
       }
 
       section {
-        padding: 62px 0;
+        padding: 60px 0;
       }
 
-      .gallery-card img {
-        height: 270px;
-      }
-
-      .floating-label {
-        right: -8px;
+      .gallery-item img {
+        height: 280px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <nav class="container">
-      <a href="#accueil" class="logo">BEROLE<span>.</span></a>
+      <a class="logo" href="#accueil">Berole<span>.</span></a>
 
       <div class="nav-links">
+        <a href="#accueil">Accueil</a>
         <a href="#apropos">À propos</a>
-        <a href="#competences">Compétences</a>
+        <a href="#expertises">Expertises</a>
         <a href="#projets">Projets</a>
         <a href="#creations">Créations</a>
         <a href="#contact">Contact</a>
@@ -670,423 +427,321 @@
   </header>
 
   <main>
-
-    <!-- ACCUEIL -->
-    <section class="hero container" id="accueil">
-
-      <div class="hero-copy">
-        <div class="small-label">Portfolio personnel · 2026</div>
+    <section class="container hero" id="accueil">
+      <div>
+        <div class="eyebrow">Portfolio personnel</div>
 
         <h1>
-          L'informatique,
-          <span>autrement.</span>
+          Bonjour, je suis <span>Berole</span>
         </h1>
 
-        <p class="hero-description">
-          Bonjour, je suis Berole, étudiante en informatique.
-          Je m'intéresse à la cybersécurité, aux réseaux, aux systèmes
-          et à la création de solutions numériques.
-          Ici, je présente mon parcours, mes projets et mes créations.
+        <p>
+          Étudiante en informatique, je m'intéresse particulièrement
+          aux réseaux, à la cybersécurité et à l'administration des
+          systèmes informatiques. Je développe progressivement mes
+          compétences à travers des travaux pratiques et des projets.
         </p>
 
         <div class="hero-buttons">
-          <a href="#projets" class="button button-primary">
-            Découvrir mes projets ↗
-          </a>
-
-          <a href="#contact" class="button button-secondary">
-            Me contacter
-          </a>
+          <a href="#projets" class="button">Découvrir mes projets</a>
+          <a href="#contact" class="button button-outline">Me contacter</a>
         </div>
       </div>
 
-      <div class="portrait-area">
-        <div class="portrait-frame">
-
-          <!--
-            POUR AJOUTER TA PHOTO :
-            1. Ajoute une image nommée portrait.jpg dans le dépôt mon-portfolio.
-            2. Remplace le bloc portrait-placeholder ci-dessous par :
-               <img src="portrait.jpg" alt="Photo de Berole">
-          -->
-
-          <div class="portrait-placeholder">
-            <div class="initial">B.</div>
-            <p>Ajoute ici ta photo de profil</p>
-          </div>
-
-        </div>
-
-        <div class="floating-label">
-          <strong>Curiosité & créativité</strong>
-          <span>Apprendre · Construire · Évoluer</span>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- À PROPOS -->
-    <section class="about-section" id="apropos">
-      <div class="container about-grid">
-
-        <div>
-          <div class="small-label">Un peu sur moi</div>
-          <h2 class="about-title">
-            Entre technologie <span class="accent">et créativité.</span>
-          </h2>
-        </div>
-
-        <div class="about-text">
-          <p>
-            Je suis étudiante en informatique et je construis
-            progressivement mon expérience à travers mes apprentissages,
-            mes travaux pratiques et mes projets.
-          </p>
-
-          <p>
-            Je m'intéresse particulièrement à la sécurité des systèmes,
-            à la supervision des infrastructures et aux réseaux.
-            J'aime aussi explorer la création graphique et le design
-            numérique.
-          </p>
-
-          <p>
-            Mon objectif est de renforcer mes compétences techniques,
-            de gagner en expérience et de participer à des projets
-            informatiques concrets.
-          </p>
-
-          <div class="interest-tags">
-            <span>Cybersécurité</span>
-            <span>Réseaux</span>
-            <span>Linux</span>
-            <span>Développement web</span>
-            <span>Design graphique</span>
-          </div>
-        </div>
-
+      <div class="shield-area">
+        <div class="shield" aria-label="Symbole de cybersécurité">⬡</div>
       </div>
     </section>
 
-    <!-- COMPÉTENCES -->
-    <section id="competences">
+    <section id="apropos">
       <div class="container">
+        <h2 class="section-heading">À <span>propos</span></h2>
 
-        <div class="section-header">
-          <div class="small-label">Ce qui m'intéresse</div>
-          <h2>Mes domaines <span class="accent">d'exploration.</span></h2>
+        <p class="section-description">
+          Quelques mots sur mon parcours et mes objectifs.
+        </p>
+
+        <div class="about-box">
           <p>
-            Les domaines dans lesquels je développe mes connaissances
-            et ma pratique.
+            Mon parcours en informatique me permet de découvrir les
+            technologies utilisées pour concevoir, administrer et
+            sécuriser les infrastructures informatiques. Je m'intéresse
+            à la manière dont les systèmes communiquent, dont les
+            événements de sécurité sont analysés et dont les menaces
+            peuvent être détectées.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Mon objectif est de renforcer mes compétences techniques,
+            de participer à des projets concrets et de poursuivre mon
+            évolution vers les métiers des réseaux et de la cybersécurité.
           </p>
         </div>
+      </div>
+    </section>
 
-        <div class="skills-grid">
+    <section id="expertises">
+      <div class="container">
+        <h2 class="section-heading">Mes <span>expertises</span></h2>
 
-          <article class="skill-card">
-            <div class="skill-number">01 / SÉCURITÉ</div>
+        <p class="section-description">
+          Les domaines informatiques que j'étudie et que je souhaite approfondir.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon">🛡️</div>
             <h3>Cybersécurité</h3>
             <p>
               Découverte des solutions de sécurité, surveillance des
-              événements et compréhension de la détection des incidents.
+              événements, détection des menaces et analyse des alertes.
             </p>
           </article>
 
-          <article class="skill-card">
-            <div class="skill-number">02 / INFRASTRUCTURE</div>
-            <h3>Réseaux et systèmes</h3>
+          <article class="card">
+            <div class="card-icon">🌐</div>
+            <h3>Réseaux</h3>
             <p>
-              Apprentissage de Linux, de la configuration réseau,
-              des machines virtuelles et de l'administration système.
+              Compréhension des communications réseau, des adresses IP,
+              des services et des échanges entre machines.
             </p>
           </article>
 
-          <article class="skill-card">
-            <div class="skill-number">03 / AUTOMATISATION</div>
-            <h3>Wazuh et Ansible</h3>
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Systèmes</h3>
             <p>
-              Travaux pratiques autour de la supervision de sécurité
-              et de l'automatisation du déploiement.
+              Découverte de l'administration Linux, des commandes système,
+              des services et de la gestion des machines.
             </p>
           </article>
 
-          <article class="skill-card">
-            <div class="skill-number">04 / CRÉATION</div>
+          <article class="card">
+            <div class="card-icon">📊</div>
+            <h3>Supervision et SIEM</h3>
+            <p>
+              Apprentissage de la collecte et de l'analyse des journaux
+              de sécurité avec des outils comme Wazuh.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>Automatisation</h3>
+            <p>
+              Initiation à l'automatisation des tâches d'administration
+              et au déploiement de solutions avec Ansible.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧩</div>
             <h3>Développement web</h3>
             <p>
-              Découverte du HTML, du CSS et du JavaScript pour
-              concevoir des pages web modernes.
+              Création de pages web et découverte des technologies
+              utilisées pour développer des interfaces.
             </p>
           </article>
+        </div>
 
-          <article class="skill-card">
-            <div class="skill-number">05 / PROTECTION</div>
-            <h3>Protection des données</h3>
-            <p>
-              Découverte des solutions de prévention des fuites de
-              données et de protection des informations.
-            </p>
-          </article>
-
-          <article class="skill-card">
-            <div class="skill-number">06 / DESIGN</div>
-            <h3>Création graphique</h3>
-            <p>
-              Conception de flyers et exploration de la mise en page,
-              des couleurs et de la communication visuelle.
-            </p>
-          </article>
-
+        <div class="tag-list">
+          <span class="tag">Wazuh</span>
+          <span class="tag">Ansible</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Réseaux</span>
+          <span class="tag">DLP</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
         </div>
       </div>
     </section>
 
-    <!-- PROJETS -->
-    <section class="projects-section" id="projets">
+    <section id="projets">
       <div class="container">
+        <h2 class="section-heading">Mes <span>projets</span></h2>
 
-        <div class="section-header">
-          <div class="small-label">Apprentissage en pratique</div>
-          <h2>Des idées aux <span class="accent">réalisations.</span></h2>
-          <p>
-            Des travaux et projets qui illustrent mon parcours
-            d'apprentissage.
-          </p>
-        </div>
+        <p class="section-description">
+          Quelques travaux et apprentissages réalisés dans le cadre
+          de mon parcours informatique.
+        </p>
 
-        <div class="project-grid">
-
-          <article class="project-card">
-            <div class="project-top">
-              <div class="project-icon">⌘</div>
-              <span class="project-index">PROJET 01</span>
-            </div>
-            <h3>Déploiement de Wazuh avec Ansible</h3>
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon">🔐</div>
+            <h3>Déploiement de Wazuh</h3>
             <p>
-              Étude du déploiement automatisé d'une solution de
-              supervision de sécurité sur plusieurs machines virtuelles.
+              Travaux pratiques autour d'une solution SIEM pour collecter
+              et analyser les événements de sécurité d'une infrastructure.
             </p>
-            <span class="project-type">Cybersécurité · Automatisation</span>
           </article>
 
-          <article class="project-card">
-            <div class="project-top">
-              <div class="project-icon">◈</div>
-              <span class="project-index">PROJET 02</span>
-            </div>
-            <h3>Découverte des solutions de sécurité</h3>
+          <article class="card">
+            <div class="card-icon">🤖</div>
+            <h3>Automatisation avec Ansible</h3>
             <p>
-              Apprentissage autour des solutions de surveillance,
-              de protection des données et de sécurisation des systèmes.
+              Étude du déploiement et de la configuration de machines
+              à l'aide d'un inventaire, de variables et de rôles Ansible.
             </p>
-            <span class="project-type">Sécurité informatique</span>
           </article>
 
-          <article class="project-card">
-            <div class="project-top">
-              <div class="project-icon">⌘</div>
-              <span class="project-index">PROJET 03</span>
-            </div>
-            <h3>Réseaux et environnement Linux</h3>
+          <article class="card">
+            <div class="card-icon">🖥️</div>
+            <h3>Administration de la sécurité</h3>
             <p>
-              Pratique des commandes Linux, découverte des connexions
-              entre machines et travail sur les environnements virtuels.
+              Découverte de solutions de protection, de prévention
+              des fuites de données et de surveillance informatique.
             </p>
-            <span class="project-type">Linux · Réseaux · Systèmes</span>
           </article>
-
-          <article class="project-card">
-            <div class="project-top">
-              <div class="project-icon">✳</div>
-              <span class="project-index">PROJET 04</span>
-            </div>
-            <h3>Portfolio personnel</h3>
-            <p>
-              Création d'un espace web personnel pour présenter
-              mon parcours, mes projets informatiques et mes créations.
-            </p>
-            <span class="project-type">HTML · CSS · JavaScript</span>
-          </article>
-
         </div>
       </div>
     </section>
 
-    <!-- CRÉATIONS GRAPHIQUES -->
     <section id="creations">
       <div class="container">
+        <h2 class="section-heading">Mes <span>créations</span></h2>
 
-        <div class="section-header">
-          <div class="small-label">Mon côté créatif</div>
-          <h2>Mes créations <span class="accent">graphiques.</span></h2>
-          <p>
-            Une sélection de flyers réalisés. Clique sur une création
-            pour l'afficher en grand.
-          </p>
-        </div>
+        <p class="section-description">
+          Une sélection de flyers réalisés pour différents besoins
+          de communication. Clique sur une image pour l'agrandir.
+        </p>
 
-        <div class="gallery-grid">
-
-          <article class="gallery-card">
+        <div class="gallery">
+          <div class="gallery-item">
             <img
               src="https://raw.githubusercontent.com/Berole42/mes-flyers/main/flyer%20kine1.jpeg"
               alt="Flyer de kinésithérapie 1"
               loading="lazy"
             >
-            <div class="gallery-info">
-              <h3>Kinésithérapie — Création 01</h3>
-              <p>Communication visuelle</p>
-            </div>
-          </article>
+            <div class="gallery-caption">Flyer kinésithérapie 1</div>
+          </div>
 
-          <article class="gallery-card">
+          <div class="gallery-item">
             <img
               src="https://raw.githubusercontent.com/Berole42/mes-flyers/main/flyer%20kine2.jpeg"
               alt="Flyer de kinésithérapie 2"
               loading="lazy"
             >
-            <div class="gallery-info">
-              <h3>Kinésithérapie — Création 02</h3>
-              <p>Communication visuelle</p>
-            </div>
-          </article>
+            <div class="gallery-caption">Flyer kinésithérapie 2</div>
+          </div>
 
-          <article class="gallery-card">
+          <div class="gallery-item">
             <img
               src="https://raw.githubusercontent.com/Berole42/mes-flyers/main/flyer%20chips.jpeg"
-              alt="Flyer publicitaire pour des chips"
+              alt="Flyer de chips"
               loading="lazy"
             >
-            <div class="gallery-info">
-              <h3>Flyer Chips</h3>
-              <p>Création publicitaire</p>
-            </div>
-          </article>
+            <div class="gallery-caption">Flyer chips</div>
+          </div>
 
-          <article class="gallery-card">
+          <div class="gallery-item">
             <img
               src="https://raw.githubusercontent.com/Berole42/mes-flyers/main/flyer%20ets%20net%20clean.png"
-              alt="Flyer Ets Net Clean"
+              alt="Flyer ETS Net Clean"
               loading="lazy"
             >
-            <div class="gallery-info">
-              <h3>Ets Net Clean</h3>
-              <p>Communication d'entreprise</p>
-            </div>
-          </article>
-
+            <div class="gallery-caption">Flyer ETS Net Clean</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact-section" id="contact">
-      <div class="container contact-grid">
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-heading">Me <span>contacter</span></h2>
 
-        <div>
-          <div class="small-label">Restons en contact</div>
-          <h2 class="about-title" style="margin-top: 16px;">
-            Un projet en tête ?
-            <span class="accent">Échangeons.</span>
-          </h2>
-          <p class="contact-intro">
-            Pour une opportunité de stage, une collaboration ou
-            un échange professionnel, tu peux me contacter ici.
+        <p class="section-description">
+          Pour une opportunité de stage, une collaboration ou un échange
+          professionnel, tu peux me contacter via les liens ci-dessous.
+        </p>
+
+        <div class="contact-box">
+          <p>
+            N'hésite pas à me contacter pour discuter de mes projets
+            et de mes centres d'intérêt en informatique.
           </p>
-        </div>
 
-        <div class="contact-list">
+          <div class="contact-links">
 
-          <!-- REMPLACE PAR TON ADRESSE E-MAIL -->
-          <a class="contact-item" href="mailto:berolechemtchoua35@gmail.com">
-            <span class="contact-icon">✉</span>
-            <span>
-              <strong>E-mail</strong>
-              <small>M'écrire par e-mail</small>
-            </span>
-          </a>
+            <!-- Remplace par ton adresse e-mail -->
+            <a class="contact-link" href="mailto:berolechemtchoua35@gmail.com">
+              <span class="contact-symbol">✉</span>
+              <span>Me contacter par e-mail</span>
+            </a>
 
-          <!-- REMPLACE PAR TON NUMÉRO AVEC L'INDICATIF +237 -->
-          <a class="contact-item" href="tel:+237693732966">
-            <span class="contact-icon">☎</span>
-            <span>
-              <strong>Téléphone</strong>
-              <small>M'appeler</small>
-            </span>
-          </a>
+            <!-- Remplace par ton numéro de téléphone avec l'indicatif +237 -->
+            <a class="contact-link" href="tel:+237693732966">
+              <span class="contact-symbol">☎</span>
+              <span>M'appeler</span>
+            </a>
 
-          <!-- REMPLACE PAR LE LIEN DE TON PROFIL LINKEDIN -->
-          <a
-            class="contact-item"
-            href="https://www.linkedin.com/in/chemtchoua berole/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="contact-icon">in</span>
-            <span>
-              <strong>LinkedIn</strong>
-              <small>Consulter mon profil professionnel</small>
-            </span>
-          </a>
+            <!-- Remplace par le lien de ton profil LinkedIn -->
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/chemtchoua berole/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-symbol">in</span>
+              <span>Mon profil LinkedIn</span>
+            </a>
 
+          </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
     <div class="container">
-      © <span id="year"></span> <span>Berole</span>.
-      Conçu avec créativité.
+      © <span id="year"></span> Berole — Portfolio personnel.
     </div>
   </footer>
 
-  <!-- FENÊTRE D'AGRANDISSEMENT DES IMAGES -->
-  <div class="lightbox" id="lightbox" role="dialog"
-       aria-modal="true" aria-label="Aperçu de la création">
-    <button class="lightbox-close" id="closeLightbox"
-            aria-label="Fermer">&times;</button>
-    <img id="lightboxImage" src="" alt="Création agrandie">
+  <div class="lightbox" id="lightbox" aria-label="Agrandissement de l'image">
+    <button class="lightbox-close" id="closeLightbox" aria-label="Fermer">
+      &times;
+    </button>
+    <img id="lightboxImage" src="" alt="Image agrandie">
   </div>
 
   <script>
-    // Met à jour automatiquement l'année dans le pied de page.
+    // Affiche automatiquement l'année actuelle.
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // Ouvre un flyer en grand lorsqu'on clique dessus.
+    // Permet d'agrandir les images de la galerie.
+    const galleryItems = document.querySelectorAll(".gallery-item");
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightboxImage");
-    const closeButton = document.getElementById("closeLightbox");
+    const closeLightbox = document.getElementById("closeLightbox");
 
-    document.querySelectorAll(".gallery-card img").forEach((img) => {
-      img.addEventListener("click", () => {
-        lightboxImage.src = img.src;
-        lightboxImage.alt = img.alt;
+    galleryItems.forEach(function (item) {
+      item.addEventListener("click", function () {
+        const image = item.querySelector("img");
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
         lightbox.classList.add("open");
       });
     });
 
-    function closePreview() {
+    function closeImage() {
       lightbox.classList.remove("open");
       lightboxImage.src = "";
     }
 
-    closeButton.addEventListener("click", closePreview);
+    closeLightbox.addEventListener("click", closeImage);
 
-    lightbox.addEventListener("click", (event) => {
+    lightbox.addEventListener("click", function (event) {
       if (event.target === lightbox) {
-        closePreview();
+        closeImage();
       }
     });
 
-    document.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
-        closePreview();
+        closeImage();
       }
     });
   </script>
-
 </body>
 </html>
