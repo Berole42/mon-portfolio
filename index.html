@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Berole Chemtchoua, étudiante en informatique, réseaux et cybersécurité.">
+  <meta name="description" content="Berole Chemtchoua, étudiante en informatique, réseaux et cybersécurité.">
   <meta name="theme-color" content="#07111f">
-  <title>Berole Chemtchoua | Portfolio informatique et cybersécurité</title>
+  <title>Berole Chemtchoua | Portfolio</title>
 
   <style>
     :root {
@@ -64,10 +64,6 @@
       font-size: 1.5rem;
       font-weight: bold;
       color: var(--light-blue);
-    }
-
-    .logo span {
-      color: var(--blue);
     }
 
     .nav-links {
@@ -136,6 +132,7 @@
       color: white;
       font-weight: bold;
       transition: 0.3s;
+      text-align: center;
     }
 
     .button:hover {
@@ -208,8 +205,8 @@
     .card {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       transition: transform 0.3s, border-color 0.3s;
+      min-width: 0;
     }
 
     .card:hover {
@@ -235,42 +232,54 @@
     .tag-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
+      gap: 10px;
+      margin-top: 20px;
     }
 
     .tag {
-      padding: 5px 11px;
+      padding: 6px 12px;
       border: 1px solid var(--border);
       background: rgba(22, 140, 255, 0.08);
       color: var(--light-blue);
       border-radius: 20px;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
     }
 
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    /* Boutons des projets */
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-top: auto;
-      padding: 10px 14px;
-      margin-top: 20px;
+      padding-top: 22px;
+    }
+
+    .project-button {
+      display: inline-block;
+      padding: 10px 13px;
       border: 1px solid var(--blue);
       border-radius: 8px;
-      color: var(--light-blue);
-      font-size: 0.9rem;
+      background: var(--blue);
+      color: white;
+      font-size: 0.88rem;
       font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
+      text-align: center;
+      transition: 0.3s;
     }
 
-    .project-link:hover {
-      background: rgba(22, 140, 255, 0.12);
+    .project-button:hover {
       transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(22, 140, 255, 0.2);
+    }
+
+    .project-button-outline {
+      background: transparent;
+      color: var(--light-blue);
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 22px;
     }
 
@@ -435,10 +444,12 @@
         height: 280px;
       }
 
-      .about-box,
-      .card,
-      .contact-box {
-        padding: 20px;
+      .project-links {
+        flex-direction: column;
+      }
+
+      .project-button {
+        width: 100%;
       }
     }
   </style>
@@ -589,7 +600,6 @@
           <span class="tag">DLP</span>
           <span class="tag">HTML</span>
           <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
         </div>
       </div>
     </section>
@@ -600,8 +610,8 @@
         <h2 class="section-heading">Mes <span>projets</span></h2>
 
         <p class="section-description">
-          Quelques travaux pratiques et projets personnels réalisés pour
-          développer mes compétences en informatique et en cybersécurité.
+          Quelques travaux et apprentissages réalisés dans le cadre
+          de mon parcours informatique.
         </p>
 
         <div class="grid">
@@ -609,55 +619,38 @@
             <div class="card-icon">🔐</div>
             <h3>Déploiement de Wazuh</h3>
             <p>
-              Travaux pratiques autour d'une solution SIEM pour collecter,
-              centraliser et analyser les événements de sécurité d'une infrastructure.
+              Travaux pratiques autour d'une solution SIEM pour collecter
+              et analyser les événements de sécurité d'une infrastructure.
             </p>
-
-            <div class="tag-list">
-              <span class="tag">Wazuh</span>
-              <span class="tag">SIEM</span>
-              <span class="tag">Linux</span>
-            </div>
           </article>
 
           <article class="card">
             <div class="card-icon">🤖</div>
             <h3>Automatisation avec Ansible</h3>
             <p>
-              Étude de l'automatisation des tâches d'administration et du
-              déploiement de machines à l'aide d'inventaires, de variables et de rôles Ansible.
+              Étude du déploiement et de la configuration de machines
+              à l'aide d'un inventaire, de variables et de rôles Ansible.
             </p>
-
-            <div class="tag-list">
-              <span class="tag">Ansible</span>
-              <span class="tag">Ubuntu</span>
-              <span class="tag">Automatisation</span>
-            </div>
           </article>
 
           <article class="card">
             <div class="card-icon">🖥️</div>
             <h3>Administration de la sécurité</h3>
             <p>
-              Découverte de solutions de protection, de prévention des fuites
-              de données (DLP) et de surveillance de l'environnement informatique.
+              Découverte de solutions de protection, de prévention
+              des fuites de données et de surveillance informatique.
             </p>
-
-            <div class="tag-list">
-              <span class="tag">DLP</span>
-              <span class="tag">Sécurité</span>
-              <span class="tag">Supervision</span>
-            </div>
           </article>
 
           <!-- NOUVEAU PROJET : PHISHING GUARD CAMEROUN -->
           <article class="card">
             <div class="card-icon">🛡️</div>
             <h3>Phishing Guard Cameroun</h3>
+
             <p>
-              Application web de sensibilisation à la cybersécurité qui aide
-              à repérer les signes suspects dans des SMS, e-mails et messages,
-              avec des exemples adaptés au contexte camerounais.
+              Application web de sensibilisation au phishing.
+              Elle aide à repérer les signes suspects dans les messages,
+              les SMS et les e-mails, avec un contexte adapté au Cameroun.
             </p>
 
             <div class="tag-list">
@@ -667,20 +660,33 @@
               <span class="tag">Phishing</span>
             </div>
 
-            <a
-              class="project-link"
-              href="https://github.com/Berole42/phishing-guard-cameroun"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Voir le code sur GitHub <span aria-hidden="true">↗</span>
-            </a>
+            <div class="project-links">
+              <a
+                class="project-button"
+                href="https://phishing-guard-cameroun.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visiter le site Phishing Guard Cameroun"
+              >
+                🌐 Visiter le site
+              </a>
+
+              <a
+                class="project-button project-button-outline"
+                href="https://github.com/Berole42/phishing-guard-cameroun"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Voir le code source sur GitHub"
+              >
+                💻 Voir le code GitHub
+              </a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CRÉATIONS -->
+    <!-- CRÉATIONS ET FLYERS -->
     <section id="creations">
       <div class="container">
         <h2 class="section-heading">Mes <span>créations</span></h2>
@@ -747,19 +753,25 @@
           </p>
 
           <div class="contact-links">
-            <a class="contact-link" href="mailto:berolechemtchoua35@gmail.com">
+            <a
+              class="contact-link"
+              href="mailto:berolechemtchoua35@gmail.com"
+            >
               <span class="contact-symbol">✉</span>
               <span>Me contacter par e-mail</span>
             </a>
 
-            <a class="contact-link" href="tel:+237693732966">
+            <a
+              class="contact-link"
+              href="tel:+237693732966"
+            >
               <span class="contact-symbol">☎</span>
               <span>M'appeler</span>
             </a>
 
             <a
               class="contact-link"
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/chemtchoua%20berole/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -782,6 +794,7 @@
     </section>
   </main>
 
+  <!-- PIED DE PAGE -->
   <footer>
     <div class="container">
       © <span id="year"></span> Berole — Portfolio personnel.
@@ -803,6 +816,7 @@
     >
       &times;
     </button>
+
     <img id="lightboxImage" src="" alt="Image agrandie">
   </div>
 
@@ -811,12 +825,13 @@
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // Permet d'agrandir les images de la galerie.
+    // Récupère les éléments nécessaires à la galerie.
     const galleryItems = document.querySelectorAll(".gallery-item");
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightboxImage");
     const closeLightbox = document.getElementById("closeLightbox");
 
+    // Ouvre une image lorsqu'on clique dessus.
     galleryItems.forEach(function (item) {
       item.addEventListener("click", function () {
         const image = item.querySelector("img");
@@ -827,6 +842,7 @@
       });
     });
 
+    // Ferme la fenêtre d'agrandissement.
     function closeImage() {
       lightbox.classList.remove("open");
       lightboxImage.src = "";
@@ -834,12 +850,14 @@
 
     closeLightbox.addEventListener("click", closeImage);
 
+    // Ferme également si l'on clique à l'extérieur de l'image.
     lightbox.addEventListener("click", function (event) {
       if (event.target === lightbox) {
         closeImage();
       }
     });
 
+    // Permet de fermer avec la touche Échap.
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
         closeImage();
