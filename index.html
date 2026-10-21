@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="chemtchoua Berole, étudiante en informatique, réseaux et cybersécurité.">
-  <title> chemtchoua Berole</title>
+  <meta name="description" content="Portfolio de Berole Chemtchoua, étudiante en informatique, réseaux et cybersécurité.">
+  <meta name="theme-color" content="#07111f">
+  <title>Berole Chemtchoua | Portfolio informatique et cybersécurité</title>
 
   <style>
     :root {
@@ -63,6 +64,10 @@
       font-size: 1.5rem;
       font-weight: bold;
       color: var(--light-blue);
+    }
+
+    .logo span {
+      color: var(--blue);
     }
 
     .nav-links {
@@ -196,11 +201,14 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
     }
 
     .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       transition: transform 0.3s, border-color 0.3s;
     }
 
@@ -227,22 +235,42 @@
     .tag-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 8px;
+      margin-top: 18px;
     }
 
     .tag {
-      padding: 6px 12px;
+      padding: 5px 11px;
       border: 1px solid var(--border);
       background: rgba(22, 140, 255, 0.08);
       color: var(--light-blue);
       border-radius: 20px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      padding: 10px 14px;
+      margin-top: 20px;
+      border: 1px solid var(--blue);
+      border-radius: 8px;
+      color: var(--light-blue);
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .project-link:hover {
+      background: rgba(22, 140, 255, 0.12);
+      transform: translateY(-2px);
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
     }
 
@@ -379,7 +407,7 @@
       }
 
       .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       nav {
@@ -406,6 +434,12 @@
       .gallery-item img {
         height: 280px;
       }
+
+      .about-box,
+      .card,
+      .contact-box {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -427,6 +461,7 @@
   </header>
 
   <main>
+    <!-- ACCUEIL -->
     <section class="container hero" id="accueil">
       <div>
         <div class="eyebrow">Portfolio personnel</div>
@@ -453,6 +488,7 @@
       </div>
     </section>
 
+    <!-- À PROPOS -->
     <section id="apropos">
       <div class="container">
         <h2 class="section-heading">À <span>propos</span></h2>
@@ -480,6 +516,7 @@
       </div>
     </section>
 
+    <!-- EXPERTISES -->
     <section id="expertises">
       <div class="container">
         <h2 class="section-heading">Mes <span>expertises</span></h2>
@@ -552,17 +589,19 @@
           <span class="tag">DLP</span>
           <span class="tag">HTML</span>
           <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
         </div>
       </div>
     </section>
 
+    <!-- PROJETS -->
     <section id="projets">
       <div class="container">
         <h2 class="section-heading">Mes <span>projets</span></h2>
 
         <p class="section-description">
-          Quelques travaux et apprentissages réalisés dans le cadre
-          de mon parcours informatique.
+          Quelques travaux pratiques et projets personnels réalisés pour
+          développer mes compétences en informatique et en cybersécurité.
         </p>
 
         <div class="grid">
@@ -570,32 +609,78 @@
             <div class="card-icon">🔐</div>
             <h3>Déploiement de Wazuh</h3>
             <p>
-              Travaux pratiques autour d'une solution SIEM pour collecter
-              et analyser les événements de sécurité d'une infrastructure.
+              Travaux pratiques autour d'une solution SIEM pour collecter,
+              centraliser et analyser les événements de sécurité d'une infrastructure.
             </p>
+
+            <div class="tag-list">
+              <span class="tag">Wazuh</span>
+              <span class="tag">SIEM</span>
+              <span class="tag">Linux</span>
+            </div>
           </article>
 
           <article class="card">
             <div class="card-icon">🤖</div>
             <h3>Automatisation avec Ansible</h3>
             <p>
-              Étude du déploiement et de la configuration de machines
-              à l'aide d'un inventaire, de variables et de rôles Ansible.
+              Étude de l'automatisation des tâches d'administration et du
+              déploiement de machines à l'aide d'inventaires, de variables et de rôles Ansible.
             </p>
+
+            <div class="tag-list">
+              <span class="tag">Ansible</span>
+              <span class="tag">Ubuntu</span>
+              <span class="tag">Automatisation</span>
+            </div>
           </article>
 
           <article class="card">
             <div class="card-icon">🖥️</div>
             <h3>Administration de la sécurité</h3>
             <p>
-              Découverte de solutions de protection, de prévention
-              des fuites de données et de surveillance informatique.
+              Découverte de solutions de protection, de prévention des fuites
+              de données (DLP) et de surveillance de l'environnement informatique.
             </p>
+
+            <div class="tag-list">
+              <span class="tag">DLP</span>
+              <span class="tag">Sécurité</span>
+              <span class="tag">Supervision</span>
+            </div>
+          </article>
+
+          <!-- NOUVEAU PROJET : PHISHING GUARD CAMEROUN -->
+          <article class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Phishing Guard Cameroun</h3>
+            <p>
+              Application web de sensibilisation à la cybersécurité qui aide
+              à repérer les signes suspects dans des SMS, e-mails et messages,
+              avec des exemples adaptés au contexte camerounais.
+            </p>
+
+            <div class="tag-list">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Phishing</span>
+            </div>
+
+            <a
+              class="project-link"
+              href="https://github.com/Berole42/phishing-guard-cameroun"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Voir le code sur GitHub <span aria-hidden="true">↗</span>
+            </a>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- CRÉATIONS -->
     <section id="creations">
       <div class="container">
         <h2 class="section-heading">Mes <span>créations</span></h2>
@@ -645,6 +730,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
         <h2 class="section-heading">Me <span>contacter</span></h2>
@@ -661,23 +747,19 @@
           </p>
 
           <div class="contact-links">
-
-            <!-- Remplace par ton adresse e-mail -->
             <a class="contact-link" href="mailto:berolechemtchoua35@gmail.com">
               <span class="contact-symbol">✉</span>
               <span>Me contacter par e-mail</span>
             </a>
 
-            <!-- Remplace par ton numéro de téléphone avec l'indicatif +237 -->
             <a class="contact-link" href="tel:+237693732966">
               <span class="contact-symbol">☎</span>
               <span>M'appeler</span>
             </a>
 
-            <!-- Remplace par le lien de ton profil LinkedIn -->
             <a
               class="contact-link"
-              href="https://www.linkedin.com/in/chemtchoua berole/"
+              href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -685,6 +767,15 @@
               <span>Mon profil LinkedIn</span>
             </a>
 
+            <a
+              class="contact-link"
+              href="https://github.com/Berole42"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="contact-symbol">GH</span>
+              <span>Mon profil GitHub</span>
+            </a>
           </div>
         </div>
       </div>
@@ -697,8 +788,19 @@
     </div>
   </footer>
 
-  <div class="lightbox" id="lightbox" aria-label="Agrandissement de l'image">
-    <button class="lightbox-close" id="closeLightbox" aria-label="Fermer">
+  <!-- AGRANDISSEMENT DES FLYERS -->
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Agrandissement de l'image"
+  >
+    <button
+      class="lightbox-close"
+      id="closeLightbox"
+      aria-label="Fermer l'image"
+    >
       &times;
     </button>
     <img id="lightboxImage" src="" alt="Image agrandie">
@@ -718,6 +820,7 @@
     galleryItems.forEach(function (item) {
       item.addEventListener("click", function () {
         const image = item.querySelector("img");
+
         lightboxImage.src = image.src;
         lightboxImage.alt = image.alt;
         lightbox.classList.add("open");
